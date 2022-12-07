@@ -8,10 +8,7 @@ for(int i = 0; i < n; i++){
 }
 Console.WriteLine("Введите количество ступеней сдвига");
 int k = Convert.ToInt32(Console.ReadLine());
-//int[] array = {5, 3, 7, 4, 6}; 
 int temp = array[0];
-//int n = 5;
-//int k = 3;
 if (k > 0){
     for (int j = 0; j < k-1; j++){
         for (int i = 0; i < n-1; i++){
