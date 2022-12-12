@@ -11,8 +11,20 @@ Console.WriteLine("Введите количество ступеней сдви
 int k = Convert.ToInt32(Console.ReadLine());
 k = k % n;
 int temp = array[0];
-if (k > 0){
-    for (int j = 0; j <= k-1; j++){
+
+if (k < 0) {
+    k = (-1)*k;
+    for (int j = 0; j < k; j++){
+        for (int i = 0; i < n-1; i++){
+            temp = array[i];
+            array[i] = array[(i+1)];
+            array[i+1] = temp;
+    }
+}
+}
+else if (k > 0){
+    
+    for (int j = 0; j < n-k; j++){
         for (int i = 0; i < n-1; i++){
             temp = array[i];
             array[i] = array[(i+1)];
@@ -20,16 +32,7 @@ if (k > 0){
        }
    }
 }
-else if (k < 0) {
-    for (int j = n-1; j >= k; j--){
-    for (int i = n-1; i > 0; i--){
-        temp = array[i];
-        array[i] = array[i-1];
-        array[i-1] = temp;
-    }
-}
-}
-   for (int i = 0; i < n; i++){
+for (int i = 0; i < n; i++){
     if(i == n-1){
     Console.Write($"[{array[i]}]");
     }
